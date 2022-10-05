@@ -322,3 +322,23 @@
   background-image: var(--newtab-hover) !important;
   margin-inline-start: -16px !important;
 }
+
+/* "userChrome.tab.container" feature tweaks. */
+
+/* Fix wrong tabs shape. */
+.tab-context-line
+{
+	display: unset !important;
+}
+
+/* Fix wrong size container tab line. */
+.tab-content:not([titlechanged])::before
+{
+	width: calc(100% - 60px) !important;
+}
+
+/* Disable resize animation. */
+.tabbrowser-tab[visuallyselected]:not([pinned]) .tab-content::before
+{
+	width: calc(100% - 60px) !important;
+}
